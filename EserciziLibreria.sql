@@ -75,3 +75,28 @@ where romanzo.titolo like "%blues"
 select *
 from romanzo
 where romanzo.titolo like "%Zeno%" and (romanzo.AnnoPubblicazione >= 1900 and romanzo.AnnoPubblicazione <= 2000)
+
+16.
+select *
+from romanzo
+where romanzo.AnnoPubblicazione < 1900 and (romanzo.titolo like "%Sposi%" or romanzo.titolo like "%sposi%")
+
+17.
+select *
+from romanzo, autore
+where romanzo.id = autore.id and autore.nome = "Alessandro" and autore.Cognome = "Manzoni"
+
+18.
+select distinct *
+from romanzo, autore
+where romanzo.id = autore.id and autore.nome = "Alessandro" and autore.Cognome = "Manzoni"
+
+19
+select *
+from romanzo, personaggioromanzo, personaggio
+where romanzo.id = personaggioromanzo.Romanzo and personaggio.id = personaggioromanzo.Personaggio and personaggio.Nome = "Rino"
+
+20.
+select *
+from romanzo, autore
+where autore.id is null
