@@ -1,1 +1,3 @@
 # sqlDatabase-ese
+
+esercitazione
