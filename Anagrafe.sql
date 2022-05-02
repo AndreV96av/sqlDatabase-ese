@@ -13,3 +13,7 @@ where pf.CittàNascita = pg.CittàNascita
 select distinct Genia.Genitore
 from Persona, Genia
 where Persona.Nome = Genia.Genitore and Persona.Età > 50 
+
+4.
+select distinct f.Genitore
+from genia f join genia g on f.Figlio = g.Genitore
