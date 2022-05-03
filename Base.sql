@@ -16,3 +16,9 @@ select distinct programmatore.codice, programma.anno
 from programmatore join autore on programmatore.codice = autore.codice
     join programma on programma.id = autore.id
 where programmatore.categoria = 10 and programma.linguaggio != "Java"
+
+4.
+select distinct autore.codice as autore, a1.codice as amicoAutore
+from autore join programma on programma.id = autore.id
+    join autore a1 on a1.id = programma.id
+where programma.linguaggio = "Python" and autore.codice != a1.codice and autore.codice < a1.codice
