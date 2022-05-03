@@ -28,4 +28,4 @@ select programmatore.nome, programmatore.codice
 from autore join programmatore on programmatore.codice = autore.codice
     join programma on programma.id = autore.id
 where programma.linguaggio like "Java"
-group by programma.linguaggio = "java"
+group by programma.linguaggio
