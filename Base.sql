@@ -29,3 +29,9 @@ from autore join programmatore on programmatore.codice = autore.codice
     join programma on programma.id = autore.id
 where programma.linguaggio like "Java"
 group by programma.linguaggio
+
+6.
+select count(programma.id), programmatore.codice, programma.anno
+from autore join programmatore on programmatore.codice = autore.codice
+    join programma on programma.id = autore.id
+group by programma.anno
