@@ -35,3 +35,9 @@ select count(programma.id), programmatore.codice, programma.anno
 from autore join programmatore on programmatore.codice = autore.codice
     join programma on programma.id = autore.id
 group by programma.anno
+
+7.
+select count(programmatore.codice), programma.linguaggio
+from autore join programmatore on programmatore.codice = autore.codice
+    join programma on programma.id = autore.id
+group by programma.linguaggio
