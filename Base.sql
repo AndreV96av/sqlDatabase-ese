@@ -22,3 +22,10 @@ select distinct autore.codice as autore, a1.codice as amicoAutore
 from autore join programma on programma.id = autore.id
     join autore a1 on a1.id = programma.id
 where programma.linguaggio = "Python" and autore.codice != a1.codice and autore.codice < a1.codice
+
+5.
+select programmatore.nome, programmatore.codice
+from autore join programmatore on programmatore.codice = autore.codice
+    join programma on programma.id = autore.id
+where programma.linguaggio like "Java"
+group by programma.linguaggio = "java"
