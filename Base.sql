@@ -10,3 +10,9 @@ from autore join programmatore on programmatore.codice = autore.codice
     join programma on programma.id = autore.id
 where programma.linguaggio != "Python"
 order by programmatore.nome
+
+3.
+select distinct programmatore.codice, programma.anno
+from programmatore join autore on programmatore.codice = autore.codice
+    join programma on programma.id = autore.id
+where programmatore.categoria = 10 and programma.linguaggio != "Java"
