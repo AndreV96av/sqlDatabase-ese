@@ -22,3 +22,10 @@ from scalata s join nazione n on s.nazione = n.nome
     join scalatore sc on s.scalatore = sc.CF
 where sc.nazioneNascita = s.nazione
 group by n.nome
+
+6.
+select sc.cf, n2.nome as nascita, n.continente, s.nazione
+from scalata s left join nazione n on s.nazione = n.nome
+    join scalatore sc on s.scalatore = sc.CF
+    join nazione n2 on n2.nome = sc.nazioneNascita
+where n2.continente != "America"
