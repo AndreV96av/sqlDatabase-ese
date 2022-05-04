@@ -38,5 +38,5 @@ group by programma.anno
 
 7.
 select programma.linguaggio, count(autore.codice)/count(distinct programma.id) as media
-from autore join programma on programma.id = autore.id
+from autore right join programma on programma.id = autore.id
 group by programma.linguaggio
