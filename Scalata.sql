@@ -15,3 +15,10 @@ select n.nome, n.continente
 from scalata s join nazione n on s.nazione = n.nome
     join scalatore sc on s.scalatore = sc.CF
 where (s.anno - sc.annoNascita) < 18
+
+4.
+select count(*) as numeroScalate, n.nome
+from scalata s join nazione n on s.nazione = n.nome
+    join scalatore sc on s.scalatore = sc.CF
+where sc.nazioneNascita = s.nazione
+group by n.nome
