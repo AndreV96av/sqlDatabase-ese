@@ -9,3 +9,9 @@ from scalata s join nazione n on s.nazione = n.nome
     join scalatore sc on s.scalatore = sc.CF
 where sc.annoNascita < 1980
 order by sc.cf , n.continente
+
+3.
+select n.nome, n.continente
+from scalata s join nazione n on s.nazione = n.nome
+    join scalatore sc on s.scalatore = sc.CF
+where (s.anno - sc.annoNascita) < 18
