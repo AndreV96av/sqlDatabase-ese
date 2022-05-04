@@ -1,5 +1,5 @@
 1.
-select distinct s.scalatore as A, n.nome as B
+select distinct s.scalatore as A, n.continente as B
 from scalata s join nazione n on s.nazione = n.nome
 order by scalatore
 
