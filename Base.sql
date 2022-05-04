@@ -37,7 +37,6 @@ from autore join programmatore on programmatore.codice = autore.codice
 group by programma.anno
 
 7.
-select count(programmatore.codice), programma.linguaggio
-from autore join programmatore on programmatore.codice = autore.codice
-    join programma on programma.id = autore.id
+select programma.linguaggio, count(autore.codice)/count(distinct programma.id) as media
+from autore join programma on programma.id = autore.id
 group by programma.linguaggio
