@@ -27,8 +27,8 @@ where programma.linguaggio = "Python" and autore.codice != a1.codice and autore.
 select programmatore.nome, programmatore.codice
 from autore join programmatore on programmatore.codice = autore.codice
     join programma on programma.id = autore.id
-where programma.linguaggio like "Java"
-group by programma.linguaggio
+where programma.linguaggio = "Java"
+
 
 6.
 select count(programma.id), programmatore.codice, programma.anno

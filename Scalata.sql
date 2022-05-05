@@ -23,6 +23,12 @@ from scalata s join nazione n on s.nazione = n.nome
 where sc.nazioneNascita = s.nazione
 group by n.nome
 
+5.
+select nasc.continente, count(*) as "scalatori"
+from scalatore s join scalata sc on s.cf = sc.scalatore
+    join nazione nasc on nasc.nome = s.nazioneNascita
+group by nasc.continente
+
 6.
 select sc.cf, n2.nome as nascita, n.continente, s.nazione
 from scalata s left join nazione n on s.nazione = n.nome
@@ -42,3 +48,10 @@ select sc.nazione, count(*)/count(distinct sc.anno) as "scalate effettuate in me
 from scalatore s join scalata sc on s.cf = sc.scalatore
 where s.nazioneNascita != sc.nazione
 group by sc.nazione
+
+9.
+select distinct scalata.scalatore
+from scalata
+where scalata.scalatore not in (select CF
+                                from scalatore
+                                where (scalata.anno - annoNascita) > 18 and nazioneNascita != nazione)
