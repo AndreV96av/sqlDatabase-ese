@@ -29,3 +29,16 @@ from scalata s left join nazione n on s.nazione = n.nome
     join scalatore sc on s.scalatore = sc.CF
     join nazione n2 on n2.nome = sc.nazioneNascita
 where n2.continente != "America"
+
+7.
+select nazione.continente, count(*) as numeroScalate, scalata.anno
+from scalata join nazione on nazione.nome = scalata.nazione
+group by nazione.continente, scalata.anno
+ having count(*) > 1
+order by scalata.anno
+
+8.
+select sc.nazione, count(*)/count(distinct sc.anno) as "scalate effettuate in media"
+from scalatore s join scalata sc on s.cf = sc.scalatore
+where s.nazioneNascita != sc.nazione
+group by sc.nazione
