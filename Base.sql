@@ -25,10 +25,10 @@ where programma.linguaggio = "Python" and autore.codice != a1.codice and autore.
 
 5.
 select programmatore.nome, programmatore.codice
-from autore join programmatore on programmatore.codice = autore.codice
-    join programma on programma.id = autore.id
-where programma.linguaggio = "Java"
-
+from programmatore, autore
+where autore.codice = programmatore.codice and programmatore.codice not in (select codice
+    from autore, programma
+    where autore.id = programma.id and linguaggio != "Java")
 
 6.
 select count(programma.id), programmatore.codice, programma.anno
